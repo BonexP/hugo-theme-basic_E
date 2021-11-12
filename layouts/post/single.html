@@ -15,7 +15,7 @@
     <h1 itemprop="name" id="title">{{ .Title }}</h1>
     <span class="f6 gray">{{ .Date.Format "January 2, 2006" }}</span>
 
-      <article itemprop="articleBody" id="content" class="w-90 lh-copy">
+      <article itemprop="articleBody" id="content" class="lh-copy">
         {{ .Content }}
       </article>
 
@@ -55,6 +55,13 @@
         </section>
       {{ end }}
 
+      {{ with .PrevInSection }}
+        <a class="fl b bb bw1 pb1 no-underline black" href="{{ .Permalink }}">« {{ .Title }}</a>
+      {{ end }}
+  
+      {{ with .NextInSection }}
+        <a class="fr b bb bw1 pb1 no-underline black" href="{{ .Permalink }}">{{ .Title }} »</a>
+      {{ end }}
   </section>
 
   {{ partial "footer.html" . }}
