@@ -16,9 +16,19 @@
   <section id="main" class="mt5">
     <h1 itemprop="name" id="title">{{ .Title }}</h1>
 
-    <article itemprop="articleBody" id="content" class="w-90 lh-copy">
+    <article itemprop="articleBody" id="content" class="lh-copy">
       {{ .Content }}
     </article>
+  </section>
+
+  <section id="links" class="mt5">
+    {{ with .PrevInSection }}
+      <a class="fl b bb bw1 pb1 no-underline black" href="{{ .Permalink }}">« {{ .Title | truncate 25 "..." }}</a>
+    {{ end }}
+
+    {{ with .NextInSection }}
+      <a class="fr b bb bw1 pb1 no-underline black" href="{{ .Permalink }}">{{ .Title | truncate 25 "..." }} »</a>
+    {{ end }}
   </section>
 
   {{ partial "footer.html" . }}
