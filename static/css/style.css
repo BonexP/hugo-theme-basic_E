@@ -28,3 +28,18 @@ code {
   -webkit-font-smoothings: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+a {
+  color: #357edd;
+}
+
+blockquote {
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-color: #357edd;
+  border-width: .25rem;
+  padding: 0.75rem;
+  padding-left: 2rem;
+  margin-left: 0;
+  margin-top: 0;
+}
