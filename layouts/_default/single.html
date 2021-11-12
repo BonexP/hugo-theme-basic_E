@@ -15,6 +15,7 @@
 
   <section id="main" class="mt5">
     <h1 itemprop="name" id="title">{{ .Title }}</h1>
+    <span class="f6 gray">{{ .Date.Format "January 2, 2006" }}</span>
 
     <article itemprop="articleBody" id="content" class="lh-copy">
       {{ .Content }}
@@ -32,5 +33,6 @@
   </section>
 
   {{ partial "footer.html" . }}
+  <a class="f6 gray" href='{{ .Site.Params.repoUrl }}/commits/master/content{{ .RelPermalink | replaceRE "/$" "" }}.md'>Changes to this post</a>
   </body>
 </html>
