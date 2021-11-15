@@ -24,11 +24,11 @@
 
   <section id="links" class="mt5">
     {{ with .PrevInSection }}
-      <a class="fl b bb bw1 pb1 no-underline black" href="{{ .Permalink }}">« {{ .Title | truncate 25 "..." }}</a>
+      <a class="fl b bb bw1 pb1 no-underline black" href="{{ .Permalink }}" title="{{ .Title }}">« Previous</a>
     {{ end }}
 
     {{ with .NextInSection }}
-      <a class="fr b bb bw1 pb1 no-underline black" href="{{ .Permalink }}">{{ .Title | truncate 25 "..." }} »</a>
+      <a class="fr b bb bw1 pb1 no-underline black" href="{{ .Permalink }}" title="{{ .Title }}">Next »</a>
     {{ end }}
   </section>
 
