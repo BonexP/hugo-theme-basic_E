@@ -30,13 +30,13 @@ code {
 }
 
 a {
-  color: #357edd;
+  color: #0058ff;
 }
 
 blockquote {
   border-left-style: solid;
   border-left-width: 1px;
-  border-color: #357edd;
+  border-color: #0058ff;
   border-width: .25rem;
   padding: 0.75rem;
   padding-left: 2rem;
