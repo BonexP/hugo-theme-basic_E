@@ -1,5 +1,21 @@
-<main id="main">
-    <div>
-        <h1 id="title"><a href="{{ "/" | relURL }}">Go Home</a></h1>
-    </div>
-</main>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    {{ partial "meta.html" . }}
+
+    <title>404 Uncharted waters</title>
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{ partial "head_includes.html" . }}
+  </head>
+  <body lang="{{ .Site.LanguageCode }}" class="sans-serif w-90 w-60-ns center center-ns mv2 mv5-ns">
+    <section id="main">
+      <div>
+        <h1 id="title" class="f3">
+            <a class="fl b bb bw1 pb1 no-underline black" href="{{ "/" | relURL }}" title="{{ .Site.Title }}">
+                « Return home, you're in uncharted waters
+            </a>
+        </h1>
+    </section>
+  </body>
+</html>
