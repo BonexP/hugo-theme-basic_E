@@ -8,6 +8,13 @@
   background-color: transparent;
   border: 0;
 }
+
+#cont {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .theme-selector fieldset {
   border: 0
 }
