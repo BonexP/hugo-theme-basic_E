@@ -15,6 +15,11 @@
   gap: 8px;
 }
 
+.theme-selector:hover {
+  background-color: rgba(100, 100, 100, 0.3);
+  border-radius: 8px;
+}
+
 .theme-selector fieldset {
   border: 0
 }
