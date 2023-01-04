@@ -64,7 +64,7 @@ img {
   border-width: 1px;
 }
 
-/* Weird overrides */
+/* Weird Tachyons overrides */
 
 .b.bb.bw1.pb1.no-underline.black {
   color: var(--off-white-color);
@@ -76,4 +76,8 @@ a.mid-gray, span.mid-gray {
 
 .f3.b.pa1.black, .f3.b.dib.black.no-underline {
   color: var(--mid-gray-color);
+}
+
+.list.lh-copy.pv3.ba.bl-0.bt-0.br-0.b--dotted.b--black-30 {
+  border-color: var(--dark-separator-color);
 }
