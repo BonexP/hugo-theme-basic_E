@@ -8,14 +8,6 @@
 
 <!-- https://hidde.blog/dark-light/ -->
 <script>
-window.addEventListener('DOMContentLoaded', function() {
-  const button = document.querySelector('button.theme-selector');
-  button.addEventListener('click', function(event) {
-    currentTheme = document.documentElement.getAttribute('data-theme-preference') === "dark" ? "light" : "dark";
-    setTheme(currentTheme);
-  });
-});
-
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 const themeStylesheet = document.getElementById('theme');
 var currentTheme;
@@ -29,11 +21,20 @@ if (localStorage.getItem('theme-preference')) {
   currentTheme = 'light';
 }
 
+setTheme(currentTheme);
+
 prefersDark.addEventListener('change', function(event) {
   currentTheme = event.matches ? 'dark' : 'light';
   setTheme(currentTheme);
 });
 
+window.addEventListener('DOMContentLoaded', function() {
+  const button = document.querySelector('button.theme-selector');
+  button.addEventListener('click', function(event) {
+    currentTheme = document.documentElement.getAttribute('data-theme-preference') === "dark" ? "light" : "dark";
+    setTheme(currentTheme);
+  });
+});
 
 function setTheme(currentTheme) {
   const pressed = currentTheme === 'dark' ? 'true' : 'false';
@@ -42,8 +43,6 @@ function setTheme(currentTheme) {
   // button.setAttribute('aria-pressed', pressed);
   themeStylesheet.href = '{{ .Site.BaseURL }}css/' + currentTheme + '.css';
 }
-
-setTheme(currentTheme);
 </script>
 
 {{ template "_internal/google_analytics_async.html" . }}
