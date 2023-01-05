@@ -10,41 +10,40 @@
 <script>
 window.addEventListener('DOMContentLoaded', function() {
   const button = document.querySelector('button.theme-selector');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  const themeStylesheet = document.getElementById('theme');
-  var currentTheme;
-
-
-  if (localStorage.getItem('theme-preference')) {
-    currentTheme = localStorage.getItem('theme-preference');
-  } else if (prefersDark.matches) {
-    currentTheme = 'dark';
-  } else {
-    themeStylesheet.href = '{{ .Site.BaseURL }}css/light.css';
-    currentTheme = 'light';
-  }
-
   button.addEventListener('click', function(event) {
     currentTheme = document.documentElement.getAttribute('data-theme-preference') === "dark" ? "light" : "dark";
     setTheme(currentTheme);
   });
+});
 
-  prefersDark.addEventListener('change', function(event) {
-    currentTheme = event.matches ? 'dark' : 'light';
-    setTheme(currentTheme);
-  });
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+const themeStylesheet = document.getElementById('theme');
+var currentTheme;
 
+if (localStorage.getItem('theme-preference')) {
+  currentTheme = localStorage.getItem('theme-preference');
+} else if (prefersDark.matches) {
+  currentTheme = 'dark';
+} else {
+  themeStylesheet.href = '{{ .Site.BaseURL }}css/light.css';
+  currentTheme = 'light';
+}
 
-  function setTheme(currentTheme) {
-    const pressed = currentTheme === 'dark' ? 'true' : 'false';
-    document.documentElement.setAttribute('data-theme-preference', currentTheme);
-    localStorage.setItem('theme-preference', currentTheme);
-    button.setAttribute('aria-pressed', pressed);
-    themeStylesheet.href = '{{ .Site.BaseURL }}css/' + currentTheme + '.css';
-  }
-
+prefersDark.addEventListener('change', function(event) {
+  currentTheme = event.matches ? 'dark' : 'light';
   setTheme(currentTheme);
 });
+
+
+function setTheme(currentTheme) {
+  const pressed = currentTheme === 'dark' ? 'true' : 'false';
+  document.documentElement.setAttribute('data-theme-preference', currentTheme);
+  localStorage.setItem('theme-preference', currentTheme);
+  // button.setAttribute('aria-pressed', pressed);
+  themeStylesheet.href = '{{ .Site.BaseURL }}css/' + currentTheme + '.css';
+}
+
+setTheme(currentTheme);
 </script>
 
 {{ template "_internal/google_analytics_async.html" . }}
