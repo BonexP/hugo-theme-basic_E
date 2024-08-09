@@ -1,0 +1,44 @@
+.theme-selector {
+  color: black;
+  padding: 0.5em;
+  cursor: pointer;
+  line-height: 0;
+  outline-offset: -0.25em;
+  outline-color: red;
+  background-color: transparent;
+  border: 0;
+}
+
+#cont {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-selector:hover {
+  background-color: rgba(100, 100, 100, 0.3);
+  border-radius: 8px;
+}
+
+.theme-selector fieldset {
+  border: 0
+}
+
+.theme-selector span, .theme-selector svg {
+  pointer-events: none
+}
+
+[data-theme-preference=dark] .theme-selector svg {
+  color: var(--dark-code-highlight-color);
+  fill: var(--dark-code-highlight-color);
+}
+
+.visually-hidden {
+  border: none;
+  clip: rect(1px,1px,1px,1px);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px
+}

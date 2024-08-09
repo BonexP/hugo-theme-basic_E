@@ -1,0 +1,83 @@
+body {
+  -webkit-font-smoothings: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: var(--dark-bg-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--off-white-color);
+}
+
+p, li, span {
+  color: var(--dark-primary-text-color);
+}
+
+p > code,
+li > code {
+  padding: 2px 4px;
+  font-size: 90%;
+  background-color: var(--dark-code-single-bg-color);
+  color: var(--dark-code-highlight-color)
+}
+
+pre > code {
+  font-size: 90%;
+}
+
+pre {
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.4;
+  border: 1px solid var(--dark-code-block-border-color);
+  overflow-x: auto;
+}
+
+pre,
+code {
+  font-family: monocode, monospace;
+  -webkit-font-smoothings: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--dark-accent-color);
+}
+
+blockquote {
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-color: var(--dark-accent-color);
+  border-width: .25rem;
+  padding: 0.75rem;
+  padding-left: 2rem;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: var(--image-border-color);
+  border-width: 1px;
+}
+
+/* Weird Tachyons overrides */
+
+.b.bb.bw1.pb1.no-underline.black {
+  color: var(--off-white-color);
+}
+
+a.mid-gray, span.mid-gray {
+  color: var(--dark-secondary-text-color);
+}
+
+.f3.b.pa1.black, .f3.b.dib.black.no-underline {
+  color: var(--mid-gray-color);
+}
+
+.list.lh-copy.pv3.ba.bl-0.bt-0.br-0.b--dotted.b--black-30 {
+  border-color: var(--dark-separator-color);
+}

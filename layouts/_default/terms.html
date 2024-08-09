@@ -9,6 +9,7 @@
     class="b bw1 bb pb1 no-underline black"
     >{{ .Site.Title }}</a
   >
+
   <span class="b"> / </span>
   <!-- prettier-ignore -->
   <span class="b pb1 no-underline black">{{ lower .Title }}</span>
@@ -25,7 +26,7 @@
             href="{{ .Permalink}}"
             >{{ .Title }}</a
           >
-          <span class="f6 gray db dib-ns child"
+          <span class="f6 mid-gray db dib-ns child"
             ><em>last seen</em> {{ .Lastmod.Format "January 2, 2006" }}</span
           >
         </li>

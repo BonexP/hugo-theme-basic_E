@@ -13,14 +13,14 @@
 
   <section id="main" class="mt5">
     <h1 itemprop="name" id="title">{{ .Title }}</h1>
-    <span class="f6 gray">{{ .Date.Format "January 2, 2006" }}</span>
+    <span class="f6 mid-gray">{{ .Date.Format "January 2, 2006" }}</span>
 
       <article itemprop="articleBody" id="content" class="w-90 lh-copy">
         {{ .Content }}
       </article>
 
       <!-- last modified note -->
-      <span class="f6 gray mv3" title="Lastmod: {{ .Lastmod.Format "January 2, 2006" }}. Published at: {{ .PublishDate.Format "2006-01-02" }}.">
+      <span class="f6 mid-gray mv3" title="Lastmod: {{ .Lastmod.Format "January 2, 2006" }}. Published at: {{ .PublishDate.Format "2006-01-02" }}.">
         {{ if ne .Lastmod .PublishDate }}
           <span class="i">last modified</span> {{ dateFormat "January 2, 2006" .Lastmod }}
         {{ end }}
@@ -43,7 +43,7 @@
                     href="{{ .Permalink}}"
                     >{{ .Title }}</a
                   >
-                  <span class="f6 gray">{{ .Date.Format "January 2, 2006" }}</span>
+                  <span class="f6 mid-gray">{{ .Date.Format "January 2, 2006" }}</span>
                 </li>
               {{ end }}
             </ul>  
